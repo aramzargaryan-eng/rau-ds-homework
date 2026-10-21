@@ -1,0 +1,23 @@
+#pragma once
+#include "../Stack.h"
+
+void top_test(){
+    Stack<int> a;
+    
+    bool thrown = false;
+    try{
+        a.top();
+    }
+    catch(const std::out_of_range&){
+        thrown = true;
+    }
+    assert(thrown);
+
+    a.push(67);
+    assert(a.top() == 67);
+
+    a.push(-34);
+    assert(a.top() == -34 && a.top() == a.peek());
+
+    std::cout << "top_test passed\n";
+}

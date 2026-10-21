@@ -1,0 +1,37 @@
+#pragma once
+#include "../Stack.h"
+
+void pop_test(){
+    Stack<double> a;
+    a.push(6.7);
+    a.push(14.88);
+    a.push(9.11);
+    a.push(-7.11);
+    a.push(2.1);
+    a.push(3.4);
+ 
+    assert(a.size() == 6);
+    assert(a.top() == 3.4);
+    
+    a.pop();
+    assert(a.size() == 5);
+    assert(a.top() == 2.1);
+
+    a.pop();
+    assert(a.size() == 4);
+    assert(a.peek() == -7.11);
+
+    a.clear();
+    assert(a.size() == 0);
+
+    bool thrown = false;
+    try{
+        a.pop();
+    }
+    catch(const std::out_of_range&){
+        thrown = true;
+    }
+    assert(thrown);
+
+    std::cout << "pop_test passed\n";
+}

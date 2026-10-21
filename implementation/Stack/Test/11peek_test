@@ -1,0 +1,29 @@
+#pragma once
+#include "../Stack.h"
+
+void peek_test()
+{
+    Stack<int> a;
+    
+    bool thrown = false;
+    try{
+        a.peek();
+    }
+    catch(const std::out_of_range&){
+        thrown = true;
+    }
+    assert(thrown);
+
+    for(int i = 1; i <= 100; ++i){
+        a.push(i);
+    }
+    assert(a.peek() == 100 && a.peek() == a.size());
+
+    a.push(101);
+    assert(a.peek() == 101);
+    a.peek() = 102;
+    assert(a.peek() == 102);
+    assert(a.size() == 101);
+
+    std::cout << "peek_test passed\n";
+}

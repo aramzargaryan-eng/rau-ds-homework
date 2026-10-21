@@ -1,0 +1,23 @@
+#pragma once
+#include "../Stack.h"
+#include <cstddef>
+
+void capacity_test(){
+
+    Stack<std::size_t> a;
+    assert(a.size() == a.capacity() && a.capacity() == 0);
+    a.push(3);
+    assert(a.size() == 1 && a.capacity() == 2);
+    a.push(4);
+    a.push(5);
+    assert(a.capacity() == 3);
+    a.push(6);
+    assert(a.capacity() == 4);
+    a.push(7);
+    assert(a.capacity() == 6);
+    a.clear();
+    assert(a.capacity() == 6);
+    
+    std::cout << "capacity_test passed\n";
+
+}

@@ -1,0 +1,9 @@
+#pragma once
+#include "../Stack.h"
+
+void default_constructor_test(){
+    Stack<int> s1;
+    assert(s1.is_empty());
+
+    std::cout << "default_constructor_test passed\n";
+}

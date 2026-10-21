@@ -1,0 +1,15 @@
+#pragma once
+#include "../Stack.h"
+#include <cstdint>
+
+void is_empty_test(){
+    Stack<uint16_t> a;
+    assert(a.is_empty());
+    a.push(45);
+    assert(!a.is_empty());
+    a.pop();
+    assert(a.size() == 0);
+    assert(a.is_empty());
+
+    std::cout << "is_empty_test passed \n";
+}

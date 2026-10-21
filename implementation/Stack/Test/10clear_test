@@ -1,0 +1,23 @@
+#pragma once
+#include "../Stack.h"
+#include <cstdint>
+
+void clear_test(){
+    Stack<uint32_t> a;
+
+    assert(a.size() == a.capacity() && a.size() == 0);
+    for(uint32_t i = 1; i <= 100; ++i){
+        a.push(i);
+    }
+
+    assert(a.size() == 100);
+    assert(a.capacity() == 141);
+
+    assert(a.top() == 100);
+
+    a.clear();
+    assert(a.size() == 0);
+    assert(a.capacity() == 141);
+
+    std::cout << "clear_test passed\n";
+}

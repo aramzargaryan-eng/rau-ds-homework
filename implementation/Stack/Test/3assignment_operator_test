@@ -1,0 +1,26 @@
+#pragma once
+#include "../Stack.h"
+
+void assignment_operator_test(){
+    Stack<char> a;
+    a.push('a');
+    a.push('b');
+    assert(a.size() == 2);
+
+    
+    Stack<char> b;
+    b.push('e');
+    b.push('1');
+    b.push('u');
+    assert(b.size() == 3);
+
+    b = a;
+    assert(b.size() == 2);
+    assert(b.peek() == 'b');
+    a.clear();
+    assert(a.size() == 0);
+    b.pop();
+    assert(b.top() == 'a');
+    
+    std::cout << "assignment_operator_test passed\n";
+}

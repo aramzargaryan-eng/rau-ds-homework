@@ -1,0 +1,25 @@
+#pragma once
+#include "../Stack.h"
+
+void copy_constructor_test(){
+    Stack<std::string> a;
+
+    assert(a.is_empty());
+    a.push("ara");
+    a.push("ay");
+    a.push("txa");
+    assert(a.top() == std::string("txa"));
+    
+    Stack<std::string> b(a);
+    assert(a.size() == 3 && a.size() == b.size());
+    assert(a.top() == b.peek());
+    a.top() = std::string("hargeli");
+    assert(a.top() == std::string("hargeli"));
+    assert(b.top() == std::string("txa"));
+    a.clear();
+    assert(a.size() == 0 && b.size() == 3);
+    b.pop();
+    assert(b.peek() == std::string("ay"));
+
+    std::cout << "copy_constructor_test passed\n";
+}

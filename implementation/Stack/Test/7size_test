@@ -1,0 +1,22 @@
+#pragma once 
+#include "../Stack.h"
+
+void size_test(){
+Stack<double> a;
+assert(a.size() == 0);
+a.push(6.7);
+assert(a.size() == 1);
+a.push(-6.67);
+assert(a.size() == a.capacity());
+a.push(8.7);
+assert(a.size() == 3);
+a.push(7.11);
+a.push(8.8);
+assert(a.size() == 5);
+a.clear();
+assert(a.size() == 0);
+assert(a.capacity() == 6);
+
+std::cout << "size_test passed\n";
+
+}

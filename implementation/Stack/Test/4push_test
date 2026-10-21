@@ -1,0 +1,20 @@
+#pragma once
+#include <cstddef>
+#include "../Stack.h"
+
+void push_test(){
+
+    Stack<std::size_t> a;
+    a.push(1);
+    assert(a.size() == 1);
+    assert(a.top() == 1);
+    a.push(67);
+    assert(a.top() == 67);
+    a.push(911);
+    assert(a.size() == 3);
+    assert(a.peek() == 911);
+    a.pop();
+    
+    std::cout << "push_test passed\n";
+
+}
