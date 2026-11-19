@@ -34,6 +34,8 @@ void test(){
     assert(root->right->left->value == 0);
     assert(root->right->right->value == -3);
 
+    del(root);
+
     std::cout << "all test passed\n";
 }
 
