@@ -1,6 +1,17 @@
 #include "BinarySearchTree.h"
-#include <cassert>
-#include <iostream>
+#include "Test/1.default_constructor_test"
+#include "Test/2.copy_constructor_test"
+#include "Test/3.assignement_operator_test"
+#include "Test/4.insert_test"
+#include "Test/5.remove_test"
+#include "Test/6.find_test"
+#include "Test/7.inorder_test"
+#include "Test/8.preorder_test"
+#include "Test/9.postorder_test"
+#include "Test/10.size_test"
+#include "Test/11.height_test"
+#include "Test/12.clear_test"
+#include "Test/13.is_empty_test"
 
 // Реализуйте методы BinarySearchTree<T>:
 //   1. BinarySearchTree()              - конструктор
@@ -18,30 +29,24 @@
 //  13. clear()                         - очистить
 //  14. is_empty()                      - пусто ли
 
-void test_insert() {
-    BinarySearchTree<int> bst;
-    
-    bst.insert(50);
-    assert(bst.size() == 1);
-    assert(bst.find(50));
-    
-    bst.insert(30);
-    bst.insert(70);
-    bst.insert(20);
-    bst.insert(40);
-    assert(bst.size() == 5);
-    assert(bst.find(30));
-    assert(bst.find(70));
-    
-    std::cout << "test_insert passed" << std::endl;
-}
-
 // void test_remove() { ... }
 // void test_find() { ... }
 
 int main() {
     std::cout << "Running BinarySearchTree tests" << std::endl;
-    test_insert();
+    default_constructor_test();
+    copy_constructor_test();
+    assignement_operator_test();
+    insert_test();
+    remove_test();
+    find_test();
+    inorder_test();
+    preorder_test();
+    postorder_test();
+    size_test();
+    height_test();
+    clear_test();
+    is_empty_test();
     std::cout << "All tests passed" << std::endl;
     return 0;
 }

@@ -1,0 +1,28 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+inline void postorder_test(){
+    std::cout << "Running postorder test\n";
+    BinarySearchTree<int> bst;
+    assert(bst.is_empty());
+    bst.insert(67);
+    bst.insert(-67);
+    bst.insert(37);
+    bst.insert(-37);
+    bst.insert(47);
+    bst.insert(-47);
+    bst.insert(34);
+    bst.insert(-37);
+    bst.insert(100);
+
+    std::cout << "postorder before remove ";
+    bst.postorder();
+
+    std::cout << "postorder after remove ";
+    bst.remove(67);
+    bst.remove(100);
+
+    bst.postorder();
+
+    std::cout << "postorder_test passed\n";
+}

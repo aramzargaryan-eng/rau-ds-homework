@@ -1,0 +1,15 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+inline void is_empty_test(){
+    BinarySearchTree<std::string> bst;
+    assert(bst.is_empty());
+    bst.insert("asa");
+    bst.insert("izvini");
+
+    assert(!bst.is_empty());
+    bst.clear();
+    assert(bst.is_empty());
+
+    std::cout << "is_empty_test passed\n";
+}

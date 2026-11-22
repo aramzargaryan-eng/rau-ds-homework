@@ -1,0 +1,38 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+void copy_constructor_test(){
+    BinarySearchTree<int> bst;
+    assert(bst.is_empty());
+    bst.insert(50);
+    bst.insert(30);
+    bst.insert(34);
+    bst.insert(60);
+    bst.insert(67);
+    bst.insert(56);
+    
+    BinarySearchTree<int> copy_bst(bst);
+    assert(copy_bst.find(50) == true);
+    assert(copy_bst.find(30) == true);
+    assert(copy_bst.find(34) == true);
+    assert(copy_bst.find(60) == true);
+    assert(copy_bst.find(67) == true);
+    assert(copy_bst.find(56) == true);
+    assert(copy_bst.find(91) == false);
+
+    assert(bst.size() == copy_bst.size());
+
+    bst.remove(34);
+    assert(bst.find(34) == false);
+    assert(copy_bst.find(34) == true);
+
+    bst.insert(99);
+    assert(bst.find(99) == true);
+    assert(copy_bst.find(99) == false);
+
+    bst.clear();
+    copy_bst.clear();
+
+    std::cout << "copy_constructor_test passed\n";
+}
+

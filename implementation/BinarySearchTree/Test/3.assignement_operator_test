@@ -1,0 +1,50 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+void assignement_operator_test(){
+    BinarySearchTree<int> bst;
+    bst.insert(60);
+    bst.insert(67);
+    bst.insert(69);
+    bst.insert(88);
+    bst.insert(911);
+    bst.insert(711);
+    bst.insert(34);
+    bst.insert(11);
+    bst.insert(30);
+    bst.insert(27);
+
+    BinarySearchTree<int> bst_1;
+    bst_1.insert(1);
+    bst_1.insert(-3);
+    bst_1.insert(3);
+
+    bst_1 = bst;
+
+    assert(bst_1.find(1) == false);
+    assert(bst_1.find(-3) == false);
+    assert(bst_1.find(3) == false);
+    assert(bst_1.find(60) == true);
+    assert(bst_1.find(67) == true);
+    assert(bst_1.find(69) == true);
+    assert(bst_1.find(88) == true);
+    assert(bst_1.find(911) == true);
+    assert(bst_1.find(34) == true);
+    assert(bst_1.find(711) == true);
+    assert(bst_1.find(11) == true);
+    assert(bst_1.find(30) == true);
+    assert(bst_1.find(27) == true);
+
+    assert(bst.size() == bst_1.size());
+
+    bst.remove(711);
+    assert(bst.find(711) == false);
+    assert(bst_1.find(711));
+
+    bst.clear();
+    assert(bst.is_empty());
+    bst_1.clear();
+    assert(bst_1.is_empty());
+
+    std::cout << "assignement_operator_test passed\n";
+}

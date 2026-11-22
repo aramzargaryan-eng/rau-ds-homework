@@ -1,0 +1,19 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+inline void insert_test(){
+    BinarySearchTree<std::string> bst;
+    assert(bst.is_empty());
+    assert(bst.size() == 0);
+    bst.insert("ara");
+    assert(bst.size() == 1);
+    assert(bst.find("ara"));
+    bst.insert("hargelis");
+    assert(bst.find("hargelis"));
+    assert(!bst.find("txa"));
+    assert(bst.size() == 2);
+
+    bst.clear();
+
+    std::cout << "insert_test passed\n";
+}

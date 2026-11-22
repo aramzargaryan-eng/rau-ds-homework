@@ -1,0 +1,30 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+inline void preorder_test(){
+    std::cout << "Running preorder test\n";
+
+    BinarySearchTree<int> bst;
+    bst.insert(67);
+    bst.insert(-67);
+    bst.insert(69);
+    bst.insert(-69);
+    bst.insert(34);
+    bst.insert(-34);
+    bst.insert(70);
+    bst.insert(-70);
+    bst.insert(90);
+
+    std::cout << "preorder before insert ";
+    bst.preorder();
+
+    bst.insert(-90);
+    bst.insert(100);
+    bst.insert(35);
+
+    std::cout << "preorder after insert ";
+    bst.preorder();
+
+    std::cout << "preorder test passed\n";
+}
+

@@ -1,0 +1,9 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+inline void default_constructor_test(){
+    BinarySearchTree<int> bst;
+    assert(bst.is_empty());
+
+    std::cout << "default_constructor_test passed\n";
+}

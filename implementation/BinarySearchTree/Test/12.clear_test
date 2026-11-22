@@ -1,0 +1,22 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+inline void clear_test(){
+    BinarySearchTree<int> bst;
+    assert(bst.is_empty());
+    for(int i = 1; i <= 40; ++i){
+        bst.insert(i);
+    }
+    assert(bst.size() == 40);
+    bst.remove(39);
+    assert(bst.size() == 39);
+    bst.remove(44);
+    assert(bst.size() == 39);
+
+    bst.clear();
+    assert(bst.is_empty());
+    assert(bst.size() == 0);
+    assert(bst.height() == 0);
+
+    std::cout << "clear_test passed\n";
+}

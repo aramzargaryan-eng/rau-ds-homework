@@ -1,0 +1,40 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+inline void inorder_test(){
+    std::cout << "Running inorder test... \n";
+    BinarySearchTree<int> bst;
+    assert(bst.is_empty());
+
+    bst.insert(67);
+    bst.insert(69);
+    bst.insert(34);
+    bst.insert(911);
+    bst.insert(711);
+    bst.insert(-67);
+    bst.insert(-69);
+    bst.insert(11);
+    bst.insert(789);
+
+    bst.inorder();
+
+    assert(bst.find(67));
+    assert(bst.find(69));
+    assert(bst.find(34));
+    assert(bst.find(911));
+    assert(bst.find(711));
+    assert(bst.find(-67));
+    assert(bst.find(-69));
+    assert(bst.find(11));
+    assert(bst.find(789));
+
+    bst.remove(67);
+    bst.remove(69);
+    bst.remove(34);
+
+    bst.inorder();
+
+    std::cout << "poryadok ostaetsa daje posle udalenia elementov\n";
+
+    std::cout << "inorder_test passed\n";
+}

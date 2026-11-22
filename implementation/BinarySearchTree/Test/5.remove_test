@@ -1,0 +1,26 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+inline void remove_test(){
+    BinarySearchTree<int> bst;
+    assert(bst.size() == 0);
+    for(int i = 1; i <= 20; ++i){
+        bst.insert(i);
+    }
+    assert(bst.size() == 20);
+    assert(!bst.find(21));
+    for(int i = 10; i < 20; ++i){
+        bst.remove(i);
+    }
+    assert(bst.size() == 10);
+    assert(!bst.find(10));
+    assert(!bst.find(30));
+    assert(bst.find(20));
+
+    bst.remove(30);
+    assert(bst.size() == 10);
+
+    bst.clear();
+
+    std::cout << "remove_test passed\n";
+}

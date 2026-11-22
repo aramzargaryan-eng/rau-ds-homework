@@ -1,0 +1,23 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+inline void height_test(){
+    BinarySearchTree<int> bst;
+    assert(bst.height() == 0);
+
+    bst.insert(67);
+    assert(bst.height() == 1);
+    bst.insert(68);
+    assert(bst.height() == 2);
+    bst.insert(65);
+    assert(bst.height() == 2);
+    bst.insert(64);
+    assert(bst.height() == 3);
+    bst.insert(60);
+    assert(bst.height() == 4);
+
+    bst.clear();
+    assert(bst.height() == 0);
+
+    std::cout << "height_test passed\n";
+}

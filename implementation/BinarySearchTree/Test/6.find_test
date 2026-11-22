@@ -1,0 +1,12 @@
+#pragma once
+#include "../BinarySearchTree.h"
+
+inline void find_test(){
+    BinarySearchTree<double> bst;
+    assert(!bst.find(6.7));
+
+    bst.insert(6.7);
+    assert(bst.find(6.7));
+
+    std::cout << "find_test passed\n";
+}
